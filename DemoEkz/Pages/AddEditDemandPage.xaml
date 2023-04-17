@@ -1,0 +1,61 @@
+﻿<Page x:Class="DemoEkz.Pages.AddEditDemandPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DemoEkz.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Работа с потребностями">
+    <ScrollViewer>
+        
+    <Grid VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+                <StackPanel HorizontalAlignment="Right">
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Город" Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Улица" Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Номер дома" Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Номер квартиры" Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Мин. цена" Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Макс. цена" Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Агент" Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Клинт" Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Мин. пл." Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Макс пл." Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Мин. кол. ком." Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Макс. кол. ком." Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Мин. кол. эт." Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Макс. кол. эт." Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Тип" Height="30" FontSize="20"></TextBlock>
+                <Button Content="Отменить" Height="30" FontSize="20" MinWidth="200" Click="Cancel_Click"></Button>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="2">
+            <StackPanel HorizontalAlignment="Left">
+                <TextBox Margin="0,5" x:Name="txtCity" Height="30" FontSize="20" MinWidth="200"></TextBox>
+                <TextBox Margin="0,5" x:Name="txtStreet" Height="30" FontSize="20" MinWidth="200"></TextBox>
+                <TextBox Margin="0,5" x:Name="txtHouse" Height="30" FontSize="20" MinWidth="200"></TextBox>
+                <TextBox Margin="0,5" x:Name="txtNumber" Height="30" FontSize="20" MinWidth="200"></TextBox>
+                <TextBox Margin="0,5" x:Name="txtMinPrice" Height="30" FontSize="20" MinWidth="200"></TextBox>
+                <TextBox Margin="0,5" x:Name="txtMaxPrice" Height="30" FontSize="20" MinWidth="200"></TextBox>
+                <ComboBox Margin="0,5" x:Name="cmbAgent" Height="30" FontSize="20" MinWidth="200" DisplayMemberPath="FirstName"></ComboBox>
+                <ComboBox Margin="0,5" x:Name="cmbClient" Height="30" FontSize="20" MinWidth="200" DisplayMemberPath="FirstName"></ComboBox>
+                <TextBox Margin="0,5" x:Name="txtMinArea" Height="30" FontSize="20" MinWidth="200"></TextBox>
+                <TextBox Margin="0,5" x:Name="txtMaxArea" Height="30" FontSize="20" MinWidth="200"></TextBox>
+                <TextBox Margin="0,5" x:Name="txtMinRoom" Height="30" FontSize="20" MinWidth="200"></TextBox>
+                <TextBox Margin="0,5" x:Name="txtMaxRoom" Height="30" FontSize="20" MinWidth="200"></TextBox>
+                <TextBox Margin="0,5" x:Name="txtMinFloor" Height="30" FontSize="20" MinWidth="200"></TextBox>
+                <TextBox Margin="0,5" x:Name="txtMaxFloor" Height="30" FontSize="20" MinWidth="200"></TextBox>
+                    <ComboBox Margin="0,5" x:Name="cmbType" Height="30" FontSize="20" MinWidth="200" DisplayMemberPath="Title" SelectionChanged="cmbType_SelectionChanged"></ComboBox>
+                <Button Content="Сохранить" Height="30" FontSize="20" MinWidth="200" Click="Save_Click"></Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+    </ScrollViewer>
+
+</Page>

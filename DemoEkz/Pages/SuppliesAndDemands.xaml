@@ -1,0 +1,66 @@
+﻿<Page x:Class="DemoEkz.Pages.SuppliesAndDemands"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DemoEkz.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Связанные потребности и предложения">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DataGrid
+            Grid.Column="0"
+            Grid.Row="0"
+            SelectionMode="Single"
+            IsReadOnly="True"
+            ColumnWidth="*"
+            x:Name="datagrid1"
+            CanUserAddRows="False"
+            AutoGenerateColumns="False"
+            >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="Код"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Price}" Header="Цена"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Agent.FirstName}" Header="Агент"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Client.FirstName}" Header="Клиент"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding RealEstate}" Header="Объект недвижимости"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid
+            SelectionMode="Single"
+            IsReadOnly="True"
+            Grid.Row="1"
+            ColumnWidth="*"
+            x:Name="datagrid2"
+            CanUserAddRows="False"
+            AutoGenerateColumns="False"
+            >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="Код"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Address_City}" Header="Город"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Address_Street}" Header="Улица"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Address_House}" Header="Номер дома"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Address_Number}" Header="Номер квартиры"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding MinPrice}" Header="Мин. цена"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding MaxPrice }" Header="Макс. цена"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Agent.FirstName}" Header="Агент"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Client.FirstName }" Header="Клинт"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding MinArea}" Header="Мин. пл."></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding MaxArea}" Header="Макс пл."></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding MinRooms }" Header="Мин. кол. ком."></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding MaxRooms}" Header="Макс. кол. ком."></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding MinFloor }" Header="Мин. кол. эт."></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding MaxFloor}" Header="Макс. кол. эт."></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Type.Title}" Header="Тип"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Row="2" Height="50" Content="Назад" Click="Back_Click"></Button>
+    </Grid>
+    
+</Page>

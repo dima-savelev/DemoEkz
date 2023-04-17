@@ -1,0 +1,51 @@
+﻿<Page x:Class="DemoEkz.Pages.ClientsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DemoEkz.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" Loaded="Page_Loaded"
+      Title="Клиенты">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="20">
+            <TextBlock Text="Поиск - " FontSize="20"></TextBlock>
+            <TextBox x:Name="txtFind" MinWidth="150" TextChanged="txtFind_TextChanged"></TextBox>
+            <Button Content="Показать потребности и предложения" Margin="10,0" Click="ToLinks_Click"></Button>
+        </StackPanel>
+        <DataGrid
+            SelectionMode="Single"
+            IsReadOnly="True"
+            Grid.Row="1"
+            ColumnWidth="*"
+            x:Name="datagrid"
+            CanUserAddRows="False"
+            AutoGenerateColumns="False"
+            >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="Код"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding FirstName}" Header="Фамилия"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding MiddleName}" Header="Имя"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding LastName}" Header="Отчество"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Phone}" Header="Телефон"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Email}" Header="Почта"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.Row="2" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Удалить" Click="Delete_Click"></Button>
+            <Button Grid.Column="1" Content="Изменить" Click="Edit_Click"></Button>
+            <Button Grid.Column="2" Content="Добавить" Click="Add_Click"></Button>
+        </Grid>
+    </Grid>
+</Page>
